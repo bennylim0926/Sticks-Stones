@@ -17,6 +17,8 @@ jobs:
 
       - name: Send Build Result
         uses: appleboy/telegram-action@master
+        if: always()
         with:
           to: ${{ secrets.TELEGRAM_TO}}
           token: ${{ secrets.TELEGRAM_TOKEN}}
+          status: ${{ job.status }}
