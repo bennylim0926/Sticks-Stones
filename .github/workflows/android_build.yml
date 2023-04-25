@@ -21,4 +21,5 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO}}
           token: ${{ secrets.TELEGRAM_TOKEN}}
-          status: ${{ job.status }}
+          message: |
+            ${{ job.status }}
