@@ -16,10 +16,11 @@ jobs:
         run: ./gradlew assemble
 
       - name: Send Build Result
+        continueOnError: true
         uses: appleboy/telegram-action@master
         if: always()
         with:
           to: ${{ secrets.TELEGRAM_TO}}
           token: ${{ secrets.TELEGRAM_TOKEN}}
           message: |
-            ${{ job.status }}
+            Build + ${{ job.status }} at ${{ github.repository }} pushed by ${{ github.actor }}
