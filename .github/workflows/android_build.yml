@@ -23,4 +23,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO}}
           token: ${{ secrets.TELEGRAM_TOKEN}}
           message: |
-            Build + ${{ job.status }} at ${{ github.repository }} pushed by ${{ github.actor }}
+            Build + ${{ job.status }} at ${{ github.repository }} pushed by ${{ github.actor }}.
