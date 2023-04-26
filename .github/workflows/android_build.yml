@@ -9,11 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-#      - name: Run Tests
-#        run: ./gradlew test
-#
-#      - name: Build Project
-#        run: ./gradlew assemble
+      - name: Run Tests
+        run: ./gradlew test
+
+      - name: Build Project
+        run: ./gradlew assemble
 
       - name: Send Build Result
         uses: appleboy/telegram-action@master
@@ -22,7 +22,6 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO}}
           token: ${{ secrets.TELEGRAM_TOKEN}}
           message: |
-            Build ${{ job.status }} at ${{ github.repository }} with commit: ${{github.sha}} pushed by ${{ github.actor }}.
-          photo: Image/yay.jpg
-#            {{ if eq(job.status, 'success') }}
-#            {{ else }} ./sad.jpeg
+            Build ${{ job.status }} at ${{ github.repository }} 
+            Commit hash: ${{github.sha}} 
+            Pushed by ${{ github.actor }}.
