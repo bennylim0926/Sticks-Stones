@@ -21,9 +21,8 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO}}
           token: ${{ secrets.TELEGRAM_TOKEN}}
-          photo: https://cataas.com/cat
           message: |
             Build ${{ job.status }} at ${{ github.repository }} with commit: ${{github.sha}} pushed by ${{ github.actor }}.
-
+          photo: yay.jpg
 #            {{ if eq(job.status, 'success') }}
 #            {{ else }} ./sad.jpeg
